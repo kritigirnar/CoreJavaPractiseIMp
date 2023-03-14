@@ -1,0 +1,25 @@
+//RestController 
+@Autowired
+KafkaProducer kafkaProd;
+
+ @GetMapping(“/getMessage”)
+public void getMessage(@RequestParam(“message”) String message)
+kafkaProd.sendMessageToTopic( message);
+
+Kafka producer: 
+
+public class KafkaProducer {
+
+@Autowired
+KafkaTemplate p<String, String>kafkaTemplate;
+public void sendMessageToTopic(String message)
+{ 
+kafkaTemplate.send(“topicNam”,message);
+}
+
+public class KafkaConsumer{
+ @KafkaListner(topics=“topicName”, groupId=“sampleGroupId”)
+public void listenToTopic(String receivedMessage)
+Syso(receivedMessage);
+//we can pass array of topics as well
+// groupId is used as Kafka create a group of consumers , one group can acccess 1 topic at a time and under that too only 1 consumer would be consuming 1topic at a time, it’s used so that load balancing can be done and partitions are not bombarded with consumer requests.
