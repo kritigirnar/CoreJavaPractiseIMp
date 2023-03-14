@@ -1,0 +1,44 @@
+55. Second max salary of the employee: 
+56. select max(sal) from employee where sal in < select max(sal) from the employee; or
+57. Select sal from employee order by sal desc limit 2,1 ; // select 1 row after 2 rows
+58. Clone the content from one table to another : create table to name as select * from employee;
+59. Diff in delete drop and truncate : 
+60. Delete : dml, where clause can vine used
+61. Drop: ddl, deletes the whole table structure
+62. Truncate.: no where clause so operationare faster , deletes the rows of the tables.no rollback possible in truncate.
+63. Rename: alter table bikes rename to 2wheeler_details.
+64. Copy the content : select * into  car_details from car;
+65. Select * into employee_details From employee where salary > 50000;
+66. Alter table employee add ( emp_contact varchar 50, empSal varchar 70);
+67. Alter table employee add employee_pf_fund varchar (59);
+68. Alter tab,e employee drop column empSal;
+69. Alter table employee add ename varchar (50) ; —modify the datatype
+70. Alter table car rename column car_color to Honda_car_colors;
+71. Select distinct ( grades) from student;
+72. Select count(bike_color ) as total_bike_color from bike_details;
+73. Count(*)- null and not null
+74. Select top(3)* from employee where esal < 50000; or 
+75. Select limit (3) from employee ebere esal < 50000;
+76. Top and limit does same work , MySQL uses limit
+77. Get the last entry from the table
+78. Select car_name from car order by car_name desc where rownum<=1;
+79. Select sum(empSal) from employee group by empcity having city_name like ‘%K’;
+80. Count student as per their age
+81. Select count( RollNo) from student group by student_age;
+82. Select minimum salary from department 
+83. Select min(salary) from department group by department_name;
+84. Select ename , min(sal) from employee group by department_name having min(sal)<50000;
+85. Select customer.name , order.orderName from customer left join order ON customer.custId= order.orderId;
+86. Select * from customer full outer join orders on customer.custId= orders.custId;
+87. Select *from orders cross join customers;
+88. Alter table student add primary key (studentId);
+89. Alter table student drop primary key;
+90. Foreign key: create table orders ( oid int not null, onane varchar not null, Primary Key(oid), foreign key(Sid) references Customer (sid);
+91. Composite key: Create table employee ( Eid varchar 20, ename varchar 30, esal integer 30,primary key (Eid, ename);
+92. Unique key CREATE TABLE students  
+93. (  
+94. S_Id int NOT NULL UNIQUE,  
+95. LastName varchar (255) NOT NULL,  
+96. FirstName varchar (255),  
+97. City varchar (255)  
+98. )  
